@@ -15,20 +15,18 @@ public class Main {
         int clientDeviceYear = 2015;
         clientOS = 1;
 
-        if (clientOS == 0) {
+        if (clientOS == 0 && clientDeviceYear < 2015) {
+            System.out.println("Установите облегченную версию приложения iOS по ссылке.");
+        }
+        else if (clientOS == 0) {
             System.out.println("Установите версию приложения для iOS по ссылке");
+        }
+
+        if (clientOS == 1 && clientDeviceYear < 2015) {
+            System.out.println("Установите облегченную версию приложения Android по ссылке.");
         }
         else if (clientOS == 1) {
             System.out.println("Установите версию приложения для Android по ссылке");
-        }
-        else if (clientOS == 0 && clientDeviceYear < 2015) {
-            System.out.println("Установите версию приложения для iOS по ссылке");
-            System.out.println("Установите облегченную версию приложения iOS по ссылке.");
-            }
-
-        else if (clientOS == 1 && clientDeviceYear < 2015) {
-            System.out.println("Установите версию приложения для Android по ссылке");
-            System.out.println("Установите облегченную версию приложения Android по ссылке.");
         }
 
 
@@ -38,13 +36,18 @@ public class Main {
         int year = 2015;
 
         if (year % 400 == 0) {
-            System.out.printf("%s год является високосным!\n", year);
+            if(year % 100 == 0) {
+                System.out.printf("%s год не является високосным ! \n", year);
+            }
+            else {
+                System.out.printf("%s год является високосным!\n", year);
+            }
         }
         else if ((year % 4 == 0) && year > 1584) {
             System.out.printf("%s год является високосным!\n", year);
         }
         else {
-            System.out.printf("%s год не является високосныи\n", year);
+            System.out.printf("%s год не является високосный\n", year);
         }
 
 //        task4
@@ -103,18 +106,22 @@ public class Main {
                 monthName = "Июнь";
                 season = "Лето";
                 System.out.printf("6-ой месяц %s это %s\n", monthName, season);
+                break;
             case 7 :
                 monthName = "Июль";
                 season = "Лето";
                 System.out.printf("7-ой месяц %s это %s\n", monthName, season);
+                break;
             case 8 :
                 monthName = "Август";
                 season = "Лето";
                 System.out.printf("8-ой месяц %s это %s\n", monthName, season);
+                break;
             case 9 :
                 monthName = "Сентябрь";
                 season = "Осень";
                 System.out.printf("9-ый месяц %s это %s\n", monthName, season);
+                break;
             case 10 :
                 monthName = "Октябрь";
                 season = "Осень";
